@@ -5,13 +5,21 @@
 ## Upcoming Projects
 
 ### Data Collection
-- Tracking your Music
+
+In these projects, we'll learn how to scrape data from websites, use APIs.
+
+- Tracking your Music (last.fm)
+- Building a Drop Bot (selenium)
 
 ### AI
+
+In these projects, we'll learn how to apply Machine Learning Methods in fun ways.
+
 - Angry Email Detector (sentiment-analysis)
 - AI Email Labeling (zero-shot-classification)
 - Long paper summary (summarization)
 - Make a simple Google Translate (translation)
 - AI enabled Chatbot (Rasa)
 
+## Other Resources
 
