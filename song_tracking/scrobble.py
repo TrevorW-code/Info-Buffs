@@ -1,13 +1,23 @@
+# artist.getSimilar
+# artist.search --> search artist
+
 import requests
 import pandas as pd
 import numpy as np
+import sys
+from secrets import api_key, shared_secret
 
-sample_req = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user="+USER+"&api_key="+API_SECRET+"&format=json"
-obj = requests.get(sample_req)
+my_user = "KRYPTOTHEDAWG"
+
+sample_req = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user="+my_user+"&api_key="+api_key+"&format=json"
+obj = requests.get(sample_req).json()
+
+
 
 SongObjList2 = []
 
-class SongObject2:
+class SongObject:
+
     def __init__(self,index,artist,image,album,track_name,time_played,last_fm_link):
         self.index = index
         self.artist = artist
@@ -23,7 +33,6 @@ class SongObject2:
         
     def as_dict(self):
         return {'image': self.linked_image, 'track_name': self.track_name, 'artist': self.artist, 'album': self.album,'time_played': self.time_played}
-    
 
 # clean this up for the cron job
 for idx,track in enumerate(obj['recenttracks']['track']):
@@ -32,14 +41,16 @@ for idx,track in enumerate(obj['recenttracks']['track']):
     image = track["image"][2]["#text"]
     album = track["album"]["#text"]
     track_name = track["name"]
-    time_played = track["date"]["#text"]
+    date = track["date"]["#text"]
+    time_played = date if date is not None else "NA"
     last_fm_link = track['url']
-    # something in this is broken
-    songInstance = SongObject2(index,artist,image,album,track_name,time_played,last_fm_link)
+    print()
+    songInstance = SongObject(index,artist,image,album,track_name,time_played,last_fm_link)
     SongObjList2.append(songInstance)
 
-df2 = pd.DataFrame([x.as_dict() for x in SongObjList2])
+df = pd.DataFrame([x.as_dict() for x in SongObjList2])
 
-f = open("test.md","w")
-f.write(df2.to_markdown())
-f.close()
+with open("recent_songs.md","w") as f:
+    f.write(df.to_markdown())
+# f = open("test.md","w")
+# f.close()
