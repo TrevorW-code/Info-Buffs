@@ -23,3 +23,5 @@ In these projects, we'll learn how to apply Machine Learning Methods in fun ways
 
 ## Other Resources
 
+- [Video Course on Python Classes](https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+
