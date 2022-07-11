@@ -11,7 +11,7 @@ In these projects, we'll learn how to scrape data from websites, use APIs.
 - [Tracking your Music](https://github.com/TrevorW-code/Info-Buffs/tree/main/song_tracking) (last.fm)
 - Building a Drop Bot (selenium)
 
-### AI
+### Machine Learning
 
 In these projects, we'll learn how to apply Machine Learning Methods in fun ways.
 
@@ -24,4 +24,5 @@ In these projects, we'll learn how to apply Machine Learning Methods in fun ways
 ## Other Resources
 
 - [Video Course on Python Classes](https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+- [Hugging Face Course](https://huggingface.co/course/chapter1/1)
 
