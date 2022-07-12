@@ -15,6 +15,7 @@ In these projects, we'll learn how to scrape data from websites, use APIs.
 
 In these projects, we'll learn how to apply Machine Learning Methods in fun ways.
 
+#### NLP
 - Angry Email Detector (sentiment-analysis)
 - AI Email Labeling (zero-shot-classification)
 - Long paper summary (summarization)
